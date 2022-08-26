@@ -38,12 +38,12 @@
     
 <link rel="stylesheet" href="/css/syntax.css">
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
 
 <style>
 
     header.intro-header {
-        background-image: url('')
+        background-image: url('null')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -94,7 +94,7 @@
                         
 							
                         <li>
-                            <a href="/随笔小说/">随笔小说</a>
+                            <a href="/逝月杂谈/">逝月杂谈</a>
                         </li>
 							
 						
@@ -102,7 +102,7 @@
                         
 							
                         <li>
-                            <a href="/逝月杂谈/">逝月杂谈</a>
+                            <a href="/随笔小说/">随笔小说</a>
                         </li>
 							
 						
@@ -283,9 +283,9 @@
                 <div class="site-heading text-center">
                     <div class="about-me">
                         <!--移动端头部显示-->
-                        <img src=""/>
+                        <img src="null"/>
                         <h5><a href="/about/">y233</a></h5>
-                        <p></p>
+                        <p>null</p>
                     </div>
                 </div>
             </div>
@@ -298,6 +298,31 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
         #    <!-- Main Content -->
+
+
+
+<div class="post-preview "
+     style="background-image: url('')">
+    <a href="/2022/08/26/CDQ分治/">
+        <h2 class="post-title">
+            CDQ分治
+        </h2>
+        <p class="post-meta">
+            <i class="fa fa-calendar" aria-hidden="true"></i> 2022/08/26
+        </p>
+        <h3 class="post-subtitle">
+            CDQ分治
+        </h3>
+        <div class="post-content-preview">
+            <p>
+                
+            </p>
+        </div>
+    </a>
+
+</div>
+
+<hr>
 
 
 
@@ -456,10 +481,13 @@
                 <div class="tags">
                     
                     
+                    <a href="/tags/#notes" title="notes"
+                       rel="2">notes</a>
+                    
+                    
+                    
                     <a href="/tags/#逝月杂谈" title="逝月杂谈"
                        rel="2">逝月杂谈</a>
-                    
-                    
                     
                     
                 </div>
@@ -582,7 +610,22 @@
 
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="">
+<img class="wechat-title-img" src="null">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

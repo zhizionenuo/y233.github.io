@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        厉害了我的临｜y233&#39;s blog
+        CDQ分治｜y233&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2022/08/10/厉害了我的临/">
+    <link rel="canonical" href="http://yoursite.com/2022/08/26/CDQ分治/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -175,17 +175,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>厉害了我的临</h1>
-                    
-                    <h2 class="subheading">厉害了厉害了</h2>
+                    <h1>CDQ分治</h1>
                     
                     <span class="meta">
                          作者 y233
                         <span>
-                          日期 2022/08/10
+                          日期 2022/08/26
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#notes"
+                           title="notes">notes</a>
                         
                     </div>
                 </div>
@@ -194,7 +195,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            厉害了我的临
+            CDQ分治
         </span>
     </div>
 </header>
@@ -205,47 +206,31 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1>天不生我大*临，压榨界万古如长夜</h1>
-<p>我大知*帝国就是牛逼，上摘星辰下踩法律</p>
-<p>二零二二七月十三放假，二零二二八月十一开学，努力让每个学生都感受到学校的关怀</p>
-<p>努力让每个假期都尽可能地缩短</p>
-<p>努力让每个周末都在教学楼中度过</p>
-<p>努力让每个家长都奉上万贯家财</p>
-<p>古语有云：风之巅，傲世间，知*放假放一天。上可疫情吃端午，下可令营占假期。不过小小假期法，挥指间灰飞烟灭；不过小小破利斯，谈笑间压榨依旧；没有其它学校，知*就是压榨的全世界！</p>
-<p>“这假期舒适，可知*提前24小时通知的那一刻，便是痛苦。”</p>
-<p>“它怎么会放过你，只会把你压榨生生世世”</p>
-<p>“我写过最多的作业，却熬不过你的通知序列”</p>
-<p>“君子一诺千金，它对学生们的许诺，从来没有”</p>
-<p>“它也许不能给你太多，但是一定会给你没有假期的世界”</p>
-<p>“知*在侧，又何能放假”</p>
-<p>“世间非万般皆苦，你明目张胆地占才是痛苦”</p>
-<p>“你放1次，它占99次，剩下1次它不占，留着猝死的时候收尸“</p>
-<p>“何其有幸，我这一生，能做知临的压榨对驴”</p>
-<p>那一天，所有学生感受到了知*的压榨</p>
-<p>“驴桑，知*的压榨又来了，你不赶紧归队吗”</p>
-<p>“笑死，有什么需要归队的，*临的压榨断过吗”</p>
-<p>“听说阳明和曾子的棺材板都要压不住了，哪一天灵气复苏他们复活了怎么办”</p>
-<p>“那太好了，我们就能解放了”</p>
-<p>“那一点都不好，因为知临这玩意死也会压榨我们。那句话这么说来着？”</p>
-<p>“你群里发来的通知，是我们一生逃都逃不过的噩梦”</p>
-<p>“知临剑锋所指，便是它们压榨之时”</p>
-<p>还有一部经典番：</p>
-<p>《末日时在干什么？有没有空？可以来被压榨吗？》</p>
-<p>看的时候我都笑死了，番名就体现了剧组的不专业性</p>
-<p>这玩意会问你可不可以吗？建议改为：《压榨学校的称霸之旅》</p>
-<p>今天你放一天假，明天我占你一年假，不服？不服你上课去啊!</p>
-<p>​                                                                                                     ----By  叶*</p>
+                <h1>二维偏序</h1>
+<h2 id="干什么">干什么</h2>
+<p>二维偏序处理的是这样一个问题：</p>
+<p>对一个由二维组组成的集合 { (a^1,b_1),(a_2,b_2),···,(a_n,b_n) } 进行偏序关系 ( 比如 $ { (a_i,b_i)&lt;(a_j,b_j)} $ 定义为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>&lt;</mo><msub><mi>b</mi><mi>i</mi></msub><mo>&amp;</mo><mo>&amp;</mo><mtext> </mtext><msub><mi>a</mi><mi>j</mi></msub><mo>&lt;</mo><msub><mi>b</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">a_i&lt;b_i \And\And\  a_j&lt;b_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&amp;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord">&amp;</span><span class="mspace"> </span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> ） 处理</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>s</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">sss
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span><span class="mord mathdefault">s</span></span></span></span></span></p>
+<h2 id="怎么做">怎么做</h2>
+<p>将一个二维组拆分为 (x,y)</p>
+<p>先按 x 排序,再比较 y 的大小。</p>
+<details open>
+<summary><span class="pre-summary">&nbsp;</span><strong>折叠——程序</strong></summary><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">y233</span>&#123;</span><br><span class="line">    <span class="type">int</span> x,y;</span><br><span class="line">&#125;a[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(y233 c,y233 d)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> c.x==d.x?c.x&lt;d.x:c.y&lt;d.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        cin&gt;&gt;a[i].x&gt;&gt;a[i].y;</span><br><span class="line">    <span class="built_in">sort</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;=n;++j)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i].y&lt;=a[j].y)</span><br><span class="line">                ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    _0_0_(<span class="number">0</span><span class="number">-0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>没错，上面就是在求 1 ~ n 中有多少个数对满足大小关系。</p>
+</details>
+<h1>CDQ分治</h1>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2022/08/12/往尘/" data-toggle="tooltip" data-placement="top"
-                           title="往尘">&larr; Previous Post</a>
-                    </li>
                     
+                    <li class="next">
+                        <a href="/2022/08/25/树剖/" data-toggle="tooltip" data-placement="top"
+                           title="树剖">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -263,7 +248,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">天不生我大*临，压榨界万古如长夜</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">二维偏序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="toc-text">干什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%81%9A"><span class="toc-text">怎么做</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">CDQ分治</span></a></li></ol>
                 </div>
             </div>
         </div>
@@ -284,6 +269,9 @@
                         <a href="/tags/">FEATURED TAGS</a>
                     </h5>
                     <div class="tags">
+                        
+                        <a class="tag" href="/tags/#notes"
+                           title="notes">notes</a>
                         
                     </div>
                 </section>
@@ -386,6 +374,35 @@
     })
 </script>
 
+
+<!-- mathjax -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        processEscapes: true
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    }});
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
 <!-- Google Analytics -->

@@ -38,12 +38,12 @@
     
 <link rel="stylesheet" href="/css/syntax.css">
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
 
 <style>
 
     header.intro-header {
-        background-image: url('')
+        background-image: url('null')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -94,7 +94,7 @@
                         
 							
                         <li>
-                            <a href="/随笔小说/">随笔小说</a>
+                            <a href="/逝月杂谈/">逝月杂谈</a>
                         </li>
 							
 						
@@ -102,7 +102,7 @@
                         
 							
                         <li>
-                            <a href="/逝月杂谈/">逝月杂谈</a>
+                            <a href="/随笔小说/">随笔小说</a>
                         </li>
 							
 						
@@ -185,13 +185,40 @@
             <!-- 标签云 -->
             <div id='tag_cloud' class="tags">
                 
-                <a href="#逝月杂谈" title="逝月杂谈" rel="2">逝月杂谈</a>
+                <a href="#notes" title="notes" rel="2">notes</a>
                 
-                <a href="#notes" title="notes" rel="1">notes</a>
+                <a href="#逝月杂谈" title="逝月杂谈" rel="2">逝月杂谈</a>
                 
             </div>
 
             <!-- 标签列表 -->
+            
+            <div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="notes">
+                    <span class="tag-text">notes</span>
+                </span>
+                
+                <div class="post-preview">
+                    <a href="/2022/08/26/CDQ分治/">
+                        <h2 class="post-title">
+                            CDQ分治
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+                <div class="post-preview">
+                    <a href="/2022/08/25/树剖/">
+                        <h2 class="post-title">
+                            树剖
+                        </h2>
+                        
+                    </a>
+                </div>
+                <hr>
+                
+            </div>
             
             <div class="one-tag-list">
                 <span class="fa fa-tag listing-seperator" id="逝月杂谈">
@@ -212,23 +239,6 @@
                     <a href="/2022/08/12/诗集/">
                         <h2 class="post-title">
                             诗集
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="notes">
-                    <span class="tag-text">notes</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2022/08/25/树剖/">
-                        <h2 class="post-title">
-                            树剖
                         </h2>
                         
                     </a>
@@ -352,7 +362,22 @@
 
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="">
+<img class="wechat-title-img" src="null">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
