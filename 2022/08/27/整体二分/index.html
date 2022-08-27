@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        厉害了我的临｜y233&#39;s blog
+        整体二分｜y233&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2022/08/10/厉害了我的临/">
+    <link rel="canonical" href="http://yoursite.com/2022/08/27/整体二分/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -175,17 +175,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>厉害了我的临</h1>
-                    
-                    <h2 class="subheading">厉害了厉害了</h2>
+                    <h1>整体二分</h1>
                     
                     <span class="meta">
                          作者 y233
                         <span>
-                          日期 2022/08/10
+                          日期 2022/08/27
                          </span>
                     </span>
                     <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#notes"
+                           title="notes">notes</a>
                         
                     </div>
                 </div>
@@ -194,7 +195,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            厉害了我的临
+            整体二分
         </span>
     </div>
 </header>
@@ -205,47 +206,82 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1>天不生我大*临，压榨界万古如长夜</h1>
-<p>我大知*帝国就是牛逼，上摘星辰下踩法律</p>
-<p>二零二二七月十三放假，二零二二八月十一开学，努力让每个学生都感受到学校的关怀</p>
-<p>努力让每个假期都尽可能地缩短</p>
-<p>努力让每个周末都在教学楼中度过</p>
-<p>努力让每个家长都奉上万贯家财</p>
-<p>古语有云：风之巅，傲世间，知*放假放一天。上可疫情吃端午，下可令营占假期。不过小小假期法，挥指间灰飞烟灭；不过小小破利斯，谈笑间压榨依旧；没有其它学校，知*就是压榨的全世界！</p>
-<p>“这假期舒适，可知*提前24小时通知的那一刻，便是痛苦。”</p>
-<p>“它怎么会放过你，只会把你压榨生生世世”</p>
-<p>“我写过最多的作业，却熬不过你的通知序列”</p>
-<p>“君子一诺千金，它对学生们的许诺，从来没有”</p>
-<p>“它也许不能给你太多，但是一定会给你没有假期的世界”</p>
-<p>“知*在侧，又何能放假”</p>
-<p>“世间非万般皆苦，你明目张胆地占才是痛苦”</p>
-<p>“你放1次，它占99次，剩下1次它不占，留着猝死的时候收尸“</p>
-<p>“何其有幸，我这一生，能做知临的压榨对驴”</p>
-<p>那一天，所有学生感受到了知*的压榨</p>
-<p>“驴桑，知*的压榨又来了，你不赶紧归队吗”</p>
-<p>“笑死，有什么需要归队的，*临的压榨断过吗”</p>
-<p>“听说阳明和曾子的棺材板都要压不住了，哪一天灵气复苏他们复活了怎么办”</p>
-<p>“那太好了，我们就能解放了”</p>
-<p>“那一点都不好，因为知临这玩意死也会压榨我们。那句话这么说来着？”</p>
-<p>“你群里发来的通知，是我们一生逃都逃不过的噩梦”</p>
-<p>“知临剑锋所指，便是它们压榨之时”</p>
-<p>还有一部经典番：</p>
-<p>《末日时在干什么？有没有空？可以来被压榨吗？》</p>
-<p>看的时候我都笑死了，番名就体现了剧组的不专业性</p>
-<p>这玩意会问你可不可以吗？建议改为：《压榨学校的称霸之旅》</p>
-<p>今天你放一天假，明天我占你一年假，不服？不服你上课去啊!</p>
-<p>​                                                                                                     ----By  叶*</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="sub-1"><a href="#sub-1" class="headerlink" title="sub 1"></a>sub 1</h2><p>对于一个序列${a_1,a_2,···,a_n}$求区间第 k 小的数。</p>
+<p>对于这种东西，自然得先考虑二分了。</p>
+<p>用一个序列 A 离线下来所有的 $(l\thicksim r)$，定义值域区间$(L\thicksim R)$,令 $mid = \frac{L+R}{2}$。</p>
+<p>将在$L\thicksim mid$区间内的答案放入 B 序列，其余答案放入 C 序列并继续向下递归分裂原序列，直至 L=R 时返回。</p>
+<p>这样的话复杂度肯定是不对的，虽然是二分但总是感觉哪里不大对劲</p>
+<h2 id="sub-2"><a href="#sub-2" class="headerlink" title="sub 2"></a>sub 2</h2><p>考虑一种复杂度错误的方法。</p>
+<p>将$l\thicksim mid$区间标上黑色，判断$l\thicksim r$中有多少个黑点。记黑点个数为 x 。</p>
+<ul>
+<li><p>若${ x&gt;t }$则答案一定会在$l\thicksim mid$区间内。</p>
+</li>
+<li><p>若${x&lt;t}$则答案一定会在$mid+1\thicksim r$区间内。</p>
+</li>
+<li><p>否则的话，${x==k}$说明 x 就是我们要的答案。</p>
+</li>
+</ul>
+<p>可以利用树状数组来进行维护单点修改与区间查询的操作。</p>
+<p>但是我们考虑一种极端情况，查询的时候有多个点被多次覆盖，重复的无意义的操作数量巨大，时间复杂度明显不对。</p>
+<h1 id="整体二分"><a href="#整体二分" class="headerlink" title="整体二分"></a>整体二分</h1><h2 id="整体二分能做什么"><a href="#整体二分能做什么" class="headerlink" title="整体二分能做什么"></a>整体二分能做什么</h2><p>整体二分处理的是有以下性质的结构体：</p>
+<pre><code>    - 询问的答案具有可二分性。
+
+    - 修改对判定答案的贡献相对独立，修改之间互不影响效果。
+
+    - 修改如果对判定答案有贡献，则贡献为一确定的与判定标准无关的值。
+
+    - 贡献满足交换律，结合律，具有可加性。
+
+    - 题目允许离线操作。
+</code></pre><p>我们发现离线后整体二分处理的复杂度与序列的总长无关，只与待处理的询问序列的长度有关。</p>
+<p>当$k=4$时，求$2\thicksim 6$区间的第 k 小数。</p>
+<p>序列：1 8 5 6 7 2 4 3</p>
+<p>我们模拟二分过程：</p>
+<p><img src="1.png" alt="1"></p>
+<p>不难发现，从刚开始我们还在$1\thicksim 8$的区间中，我们取中点$mid=4$</p>
+<p>注意，这里的$l,r$代表的是值域区间，所以我们会发现在要求区间中只有 1 个小于 4 的值。</p>
+<p>于是我们把 k 减去 1 并删掉这一个小于 4 的数 $2$ 递归到值域的右区间(因为我们处理的是第 k 小，将值域 mid 减小的话反而会使我们当前的排名变大，而当前排名本就比k大，所以递归值域的右区间)</p>
+<p>此时我们的$l=5\quad r=8\quad mid=6$ ，再重复上面的做法，删掉了$5,6$，此时$k=3-2=1$。</p>
+<p>再递归到$7\thicksim 8$ 区间中，$mid=7$,发现只有 1 个数 7 刚好$\ \le 7$，此时$k=1-1=0$，故答案为$7$。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/SP3946">SP3946 MKTHNUM - K-th Number</a></p>
+<p>(题面直接由洛谷copy过来)</p>
+<p>+++ <strong>题面</strong></p>
+<h3 id="题面翻译"><a href="#题面翻译" class="headerlink" title="题面翻译"></a>题面翻译</h3><p>题目大意：</p>
+<p>给你n个数，多次询问某段区间第k小的数。</p>
+<p>输入格式：</p>
+<p>第一行两个数n、m，n代表有多少个数，m代表询问数。</p>
+<p>第二行n个数给出，不超过10^9。</p>
+<p>接下来m行，每行三个数i,j,k，询问第i个数到第j个数中第k小的数是什么。</p>
+<p>输出格式：</p>
+<p>输出共m行，对每次询问的回答。</p>
+<p>数据范围：</p>
+<p>1&lt;=n&lt;=100000,1&lt;=m&lt;=5000。</p>
+<p><del>注意：简单的做法可是过不了的。</del></p>
+<p> 感谢 @gjc1124646822  提供的翻译。</p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p><a href="/problems/MKTHNUM/en/">English</a> <a href="/problems/MKTHNUM/vn/">Vietnamese</a> You are working for Macrohard company in data structures department. After failing your previous task about key insertion you were asked to write a new data structure that would be able to return quickly k-th order statistics in the array segment.</p>
+<p> That is, given an array a[1 … n] of different integer numbers, your program must answer a series of questions Q(i, j, k) in the form: “What would be the k-th number in a[i … j] segment, if this segment was sorted?”</p>
+<p> For example, consider the array a = (1, 5, 2, 6, 3, 7, 4). Let the question be Q(2, 5, 3). The segment a[2 … 5] is (5, 2, 6, 3). If we sort this segment, we get (2, 3, 5, 6), the third number is 5, and therefore the answer to the question is 5.</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>The first line of the input contains n — the size of the array, and m — the number of questions to answer (1 ≤ n ≤ 100000, 1 ≤ m ≤ 5000).</p>
+<p> The second line contains n different integer numbers not exceeding 10^9 by their absolute values — the array for which the answers should be given.</p>
+<p> The following m lines contain question descriptions, each description consists of three numbers: i, j, and k (1 ≤ i ≤ j ≤ n, 1 ≤ k ≤ j - i + 1) and represents the question Q(i, j, k).</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">SAMPLE INPUT</span><br><span class="line">7 3</span><br><span class="line">1 5 2 6 3 7 4</span><br><span class="line">2 5 3</span><br><span class="line">4 4 1</span><br><span class="line">1 7 3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line">For each question output the answer to it — the k-th number in sorted </span><br><span class="line">a[i ... j] segment. </span><br><span class="line"></span><br><span class="line">SAMPLE OUTPUT</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<p> <strong>Note : naive solution will not work!!!</strong><br>+++</p>
+<p>完全就是上面所讲的好吗。</p>
+<p>这里只要考虑再用树状数组维护区间中比当前数小的数的个数就好了</p>
+<hr>
+<p><del>由于写挂了所以不贴了</del></p>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2022/08/12/往尘/" data-toggle="tooltip" data-placement="top"
-                           title="往尘">&larr; Previous Post</a>
-                    </li>
                     
+                    <li class="next">
+                        <a href="/2022/08/26/CDQ分治/" data-toggle="tooltip" data-placement="top"
+                           title="CDQ分治">Next Post &rarr;</a>
+                    </li>
                     
                 </ul>
 
@@ -263,7 +299,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">天不生我大*临，压榨界万古如长夜</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sub-1"><span class="toc-text">sub 1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sub-2"><span class="toc-text">sub 2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86"><span class="toc-text">整体二分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-text">整体二分能做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E9%9D%A2%E7%BF%BB%E8%AF%91"><span class="toc-text">题面翻译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-text">输出格式</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
@@ -284,6 +320,9 @@
                         <a href="/tags/">FEATURED TAGS</a>
                     </h5>
                     <div class="tags">
+                        
+                        <a class="tag" href="/tags/#notes"
+                           title="notes">notes</a>
                         
                     </div>
                 </section>
