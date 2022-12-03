@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        notes｜欢迎来到希望学院
+        P8816 上升点列 题解？｜欢迎来到希望学院
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/notes/">
+    <link rel="canonical" href="http://yoursite.com/2022/12/03/P8816-上升点列-题解？/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -49,7 +49,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -176,223 +176,135 @@
 </script>
 
 <!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://cdn.luogu.com.cn/upload/image_hosting/ve77vglv.png">
+
+
 <style>
-    .intro-header .site-heading {
-        margin: 50px;
-    }
     
     header.intro-header {
         background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/ve77vglv.png')
     }
+
     
 </style>
 
-<!-- Page Header -->
 <header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading text-center">
-                    <h1>notes</h1>
-                    <span class="subheading">瞬息海棠叶逝去，万年流水山世余</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>P8816 上升点列 题解？</h1>
+
+                    
+
+                    
+                    <span class="   ">
+                         作者 y233
+                        <span>
+                          日期 2022/12/03
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#题解"
+                           title="题解">题解</a>
+                        
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            P8816 上升点列 题解？
+        </span>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <!-- 标签云 -->
-            <div id='tag_cloud' class="tags">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>很明显的dp，只要加上限制条件与判断中间最多需要加几个点就行了。</p>
+<p>长得还是很像 0/1 背包的，所以我们定义$dp_{i,j}$表示第 i 个点，总共添加了 j 个点所可以达到的最大长度。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">510</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,k;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">nde</span>&#123;</span><br><span class="line">	<span class="type">int</span> x,y;</span><br><span class="line">&#125;a[N];</span><br><span class="line"><span class="type">int</span> dp[N][<span class="number">110</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">cmp</span><span class="params">(nde x,nde y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x.x==y.x?x.y&lt;y.y:x.x&lt;y.x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">ans</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="type">int</span> ansh=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//	freopen(&quot;point.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line"><span class="comment">//	freopen(&quot;point.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;a[i].x&gt;&gt;a[i].y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=k;++j)</span><br><span class="line">			dp[i][j]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;i;++j)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[j].y&gt;a[i].y &amp;&amp; a[i].x!=a[j].x) <span class="keyword">continue</span>;</span><br><span class="line">			<span class="type">int</span> mnn=<span class="number">0</span>;</span><br><span class="line">			mnn=<span class="built_in">abs</span>(a[i].x-a[j].x)+<span class="built_in">abs</span>(a[i].y-a[j].y)<span class="number">-1</span>;</span><br><span class="line">			mnn=<span class="built_in">max</span>(mnn,<span class="number">0ll</span>);</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> h=k;h&gt;=mnn;--h)&#123;</span><br><span class="line">				dp[i][h]=<span class="built_in">max</span>(dp[i][h],dp[j][h-mnn]+<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">if</span>(dp[i][h]+k&gt;ans)&#123;</span><br><span class="line">					ans=dp[i][h]+k;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span>(<span class="number">0</span><span class="number">-0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                <hr>
                 
-                <a href="#notes" title="notes" rel="4">notes</a>
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/12/03/CF875D-题解/" data-toggle="tooltip" data-placement="top"
+                           title="CF875D 题解">下一篇文章 &rarr;</a>
+                    </li>
+                    
+                </ul>
+
                 
-                <a href="#逝月杂谈" title="逝月杂谈" rel="2">逝月杂谈</a>
+
                 
-                <a href="#题解" title="题解" rel="7">题解</a>
+
+
+                <!--加入新的评论系统-->
                 
+
+                
+
             </div>
 
-            <!-- 标签列表 -->
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="notes">
-                    <span class="tag-text">notes</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2022/08/26/CDQ分治/">
-                        <h2 class="post-title">
-                            CDQ分治
-                        </h2>
-                        
-                        <h3 class="post-subtitle">
-                            那些虽然简单但是前置知识范围广大的ex知识点
-                        </h3>
-                        
-                    </a>
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    
                 </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/09/02/排序/">
-                        <h2 class="post-title">
-                            排序
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/08/27/整体二分/">
-                        <h2 class="post-title">
-                            整体二分
-                        </h2>
-                        
-                        <h3 class="post-subtitle">
-                            对于这个及其容易写挂而且懒惰的菜逼而言，更新是一件伟大的事
-                        </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/08/25/树剖/">
-                        <h2 class="post-title">
-                            树剖
-                        </h2>
-                        
-                        <h3 class="post-subtitle">
-                            继线段树以后第二个让我得心应手的提高数据结构
-                        </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
             </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="逝月杂谈">
-                    <span class="tag-text">逝月杂谈</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2022/08/12/往尘/">
-                        <h2 class="post-title">
-                            往尘
-                        </h2>
-                        
-                        <h3 class="post-subtitle">
-                            绝对不是恋爱史啥的!!!
-                        </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/08/12/诗集/">
-                        <h2 class="post-title">
-                            诗集
-                        </h2>
-                        
-                        <h3 class="post-subtitle">
-                            密码不就是我的真实名字缩写+poem吗
-                        </h3>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-            <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="题解">
-                    <span class="tag-text">题解</span>
-                </span>
-                
-                <div class="post-preview">
-                    <a href="/2022/12/03/AT-abc277-c 题解/">
-                        <h2 class="post-title">
-                            AT_abc277_c 题解
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/12/03/C-莲子的排版设计学 题解/">
-                        <h2 class="post-title">
-                            C-莲子的排版设计学题解
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/12/03/AT_abc277_e 题解/">
-                        <h2 class="post-title">
-                            AT_abc277_e 题解
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/12/03/CF1729E 题解/">
-                        <h2 class="post-title">
-                            CF1729E题解
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/12/03/P8816-上升点列-题解？/">
-                        <h2 class="post-title">
-                            P8816 上升点列 题解？
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/12/03/CF875D-题解/">
-                        <h2 class="post-title">
-                            CF875D 题解
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-                <div class="post-preview">
-                    <a href="/2022/12/03/hihocoder 1365 图片排版题解/">
-                        <h2 class="post-title">
-                            图片排版题解
-                        </h2>
-                        
-                    </a>
-                </div>
-                <hr>
-                
-            </div>
-            
-
         </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#题解"
+                           title="题解">题解</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
     </div>
-</div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
