@@ -437,7 +437,7 @@ article blockquote cite:before{
 .intro-header .post-heading .meta {
     font-weight: 300;
     font-size: 14px;
-    color: #eee;
+    color: rgb(2, 0, 0);
 }
 
 .intro-header .post-heading .meta span {
@@ -1104,8 +1104,8 @@ img::-moz-selection {
 
 .navbar-custom.is-fixed .brand-logo {
     border-radius: 3px;
-    background: black;
-    color: white;
+    background: rgb(255, 255, 255);
+    color: rgba(138, 3, 201, 0.822);
     padding-bottom: 3px;
     padding-left: 5px;
     margin-right: 5px;
