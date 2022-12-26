@@ -109,17 +109,6 @@
 							
                         <li>
                             
-                            <a href="/tags/随笔小说/">随笔小说</a>
-                            
-
-                        </li>
-							
-						
-                    
-                        
-							
-                        <li>
-                            
                             <a href="/tags/逝月杂谈/">逝月杂谈</a>
                             
 
@@ -132,6 +121,17 @@
                         <li>
                             
                             <a href="/tags/题解/">题解</a>
+                            
+
+                        </li>
+							
+						
+                    
+                        
+							
+                        <li>
+                            
+                            <a href="/tags/随笔小说/">随笔小说</a>
                             
 
                         </li>
@@ -233,7 +233,7 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <p>很明显的dp，只要加上限制条件与判断中间最多需要加几个点就行了。</p>
-<p>长得还是很像 0/1 背包的，所以我们定义<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dp_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>表示第 i 个点，总共添加了 j 个点所可以达到的最大长度。</p>
+<p>长得还是很像 0/1 背包的，所以我们定义$dp_{i,j}$表示第 i 个点，总共添加了 j 个点所可以达到的最大长度。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">510</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,k;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">nde</span>&#123;</span><br><span class="line">	<span class="type">int</span> x,y;</span><br><span class="line">&#125;a[N];</span><br><span class="line"><span class="type">int</span> dp[N][<span class="number">110</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">cmp</span><span class="params">(nde x,nde y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x.x==y.x?x.y&lt;y.y:x.x&lt;y.x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">ans</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="type">int</span> ansh=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//	freopen(&quot;point.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line"><span class="comment">//	freopen(&quot;point.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">		cin&gt;&gt;a[i].x&gt;&gt;a[i].y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">sort</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;=k;++j)</span><br><span class="line">			dp[i][j]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;i;++j)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[j].y&gt;a[i].y &amp;&amp; a[i].x!=a[j].x) <span class="keyword">continue</span>;</span><br><span class="line">			<span class="type">int</span> mnn=<span class="number">0</span>;</span><br><span class="line">			mnn=<span class="built_in">abs</span>(a[i].x-a[j].x)+<span class="built_in">abs</span>(a[i].y-a[j].y)<span class="number">-1</span>;</span><br><span class="line">			mnn=<span class="built_in">max</span>(mnn,<span class="number">0ll</span>);</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> h=k;h&gt;=mnn;--h)&#123;</span><br><span class="line">				dp[i][h]=<span class="built_in">max</span>(dp[i][h],dp[j][h-mnn]+<span class="number">1</span>);</span><br><span class="line">				<span class="keyword">if</span>(dp[i][h]+k&gt;ans)&#123;</span><br><span class="line">					ans=dp[i][h]+k;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span>(<span class="number">0</span><span class="number">-0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
                 <hr>
